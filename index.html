@@ -60,5 +60,20 @@
         // JavaScript code
         console.log("Hello, World!");
     </script>
+    <script>
+    // Load the navigation menu from navigation.html and insert it into the #navigation element
+    window.addEventListener('DOMContentLoaded', function() {
+        var navigationElement = document.querySelector('#navigation');
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'navigation.html', true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                navigationElement.innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+    });
+</script>
+
 </body>
 </html>
